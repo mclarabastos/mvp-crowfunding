@@ -11,10 +11,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 
-          {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-start gap-3 mb-4">
-              {/* Logo textual igual navbar */}
               <div className="flex flex-col leading-none">
                 <span className="font-display font-black uppercase tracking-tight text-white text-lg leading-none">
                   Mulheres
@@ -37,7 +35,7 @@ export default function Footer() {
                 { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/mulheresquecodam.oficial?igsh=ZDNzOXo4ODl6OGk3" },
                 { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/mulheresquecodam?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
                 { Icon: Twitter, label: "X (Twitter)", href: "https://x.com/SEU_PERFIL" },
-                { Icon: Mail, label: "E-mail", href: "mailto:contato@mulheresquecodam.org" },
+                { Icon: Mail, label: "E-mail", href: "mailto:mulheresquecodam@gmail.com" },
               ].map(({ Icon, label, href }) => (
                 <a
                   key={label}
@@ -58,19 +56,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Plataforma */}
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-5">
               Plataforma
             </h3>
             <ul className="space-y-3">
               <li><Link href="/projetos" className="text-gray-400 hover:text-white text-sm">Projetos Ativos</Link></li>
-              <li><Link href="#sobre" className="text-gray-400 hover:text-white text-sm">Como Funciona</Link></li>
-              <li><Link href="#transparencia" className="text-gray-400 hover:text-white text-sm">Transparência</Link></li>
+              <li><Link href="/sobre" className="text-gray-400 hover:text-white text-sm">Como Funciona</Link></li>
+              <li><Link href="/transparencia" className="text-gray-400 hover:text-white text-sm">Transparência</Link></li>
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-5">
               Legal
@@ -86,7 +82,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-5">
               Newsletter
@@ -110,18 +105,22 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-xs">
-            © 2026 Mulheres que Codam. Todos os direitos reservados.
+        <div className="border-t border-white/10 pt-6 flex flex-col items-center gap-4">
+          <p className="text-gray-400 text-xs font-medium uppercase tracking-wider text-center max-w-2xl mb-2">
+            Desenvolvido pelas alunas do Mulheres que Codam | Projetado por Beatriz Santos, Maria Clara Bastos e Amanda Folly
           </p>
+          <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
+            <p className="text-gray-500 text-xs">
+              © 2026 Mulheres que Codam. Todos os direitos reservados.
+            </p>
 
-          <div className="flex items-center gap-4 text-xs text-gray-500">
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-green-400" />
-              Plataforma Online
-            </span>
-            <span>Powered by Stellar Network</span>
+            <div className="flex items-center gap-4 text-xs text-gray-500">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-green-400" />
+                Plataforma Online
+              </span>
+              <span>Powered by Stellar Network</span>
+            </div>
           </div>
         </div>
       </div>
