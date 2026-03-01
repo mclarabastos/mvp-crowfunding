@@ -109,7 +109,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           {/* CTA Faça parte */}
           <Link
-            href="/dashboard"
+            href="/login"
             className="
               hidden sm:inline-flex items-center justify-center
               rounded-xl px-4 py-2
