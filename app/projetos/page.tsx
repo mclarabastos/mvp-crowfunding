@@ -23,39 +23,70 @@ export default function Projetos() {
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-200 transition-colors duration-200">
       {/* CABEÇALHO ANTIGO REMOVIDO - AGORA USA A NAVBAR GLOBAL DO LAYOUT */}
 
-      <header className="relative bg-[#002B99] overflow-hidden">
+      <header className="relative bg-[#0f00a1] overflow-hidden">
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-orange-500 rounded-full opacity-20 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-yellow-400 rounded-full opacity-20 blur-3xl"></div>
         <div className="relative max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between">
           <div className="sm:max-w-xl mb-8 sm:mb-0">
-            <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tighter mb-4 leading-none uppercase">
+            <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tighter uppercase mb-4 leading-none">
               Decodificando o sistema,
               <br />
-              <span className="text-yellow-400">construindo o futuro.</span>
+              <span className="text-accent">construindo o futuro.</span>
             </h1>
-            <p className="text-lg text-blue-100 mb-8 max-w-2xl font-medium opacity-90 uppercase tracking-widest leading-relaxed">
+            <p className="text-lg text-blue-100 mb-8 max-w-2xl font-medium opacity-90 tracking-widest leading-relaxed">
               Apoie projetos que empoderam mulheres de comunidades periféricas
               através da educação tecnológica.
             </p>
           </div>
+          <div className="relative w-full max-w-xl lg:max-w-lg">
+          {/* Glow controlado (profissional) */}
+          <div
+            className="pointer-events-none absolute -inset-10 rounded-[34px]
+              bg-[radial-gradient(circle_at_70%_30%,rgba(255,102,0,0.22),transparent_55%),radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.12),transparent_55%)]
+              blur-2xl"
+            aria-hidden
+          />
 
-          <div className="relative group w-full max-w-sm md:max-w-md">
-            <div className="relative bg-transparent rounded-[3rem] shadow-2xl transform rotate-3 border-l-[12px] border-[#FF6600] w-full overflow-hidden h-[350px] md:h-[450px] transition-all hover:rotate-0 hover:scale-[1.02] duration-500">
-              <Image
-                src="/images/projetos/mqc-ideathon.jpeg"
-                alt="Mulheres que Codam Ideathon"
-                fill
-                className="object-cover" // Removi o rounded interno para não haver conflito com o arredondamento do pai
-                priority
-              />
-              {/* Overlay de legenda interna */}
-              <div className="absolute bottom-8 left-8 right-8 z-10">
-                <span className="bg-[#FF6600] text-white text-[11px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.2em] shadow-xl">
-                  MQC Ideathon
-                </span>
+          {/* Moldura externa (border suave + shadow) */}
+          <div className="relative rounded-[30px] p-[2px] bg-gradient-to-br from-white/18 via-white/8 to-white/0 shadow-[0_30px_90px_rgba(0,0,0,0.35)]">
+            {/* Moldura interna com “laranja” bem fino */}
+            <div className="rounded-[28px] p-[2px] bg-gradient-to-br from-orange-500/70 via-orange-500/20 to-transparent">
+              {/* Card */}
+              <div className="relative overflow-hidden rounded-[26px] bg-white/6 backdrop-blur-md">
+                {/* highlight (reflexo) */}
+                <div
+                  className="pointer-events-none absolute -top-24 -left-24 h-56 w-56 rounded-full bg-white/10 blur-2xl"
+                  aria-hidden
+                />
+
+                {/* Overlay de contraste (bem leve) */}
+                <div
+                  className="pointer-events-none absolute inset-0
+                    bg-gradient-to-t from-black/35 via-black/10 to-transparent"
+                  aria-hidden
+                />
+
+                {/* Imagem com proporção fixa */}
+                <div className="aspect-[4/3] sm:aspect-[16/10]">
+                  <Image
+                    src="/images/projetos/alunas_ideiathon.jpeg"
+                    alt="Alunas do projeto Mulheres que Codam"
+                    width={1400}
+                    height={900}
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-[1.02]"
+                    priority
+                  />
+                </div>
+
+                {/* Linha sutil no topo (acabamento) */}
+                <div
+                  className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/20"
+                  aria-hidden
+                />
               </div>
             </div>
           </div>
+        </div>
         </div>
       </header>
 
@@ -496,19 +527,6 @@ export default function Projetos() {
           </div>
         </div>
       </main>
-
-      <footer className="py-20 border-t border-slate-100 dark:border-slate-800 text-center space-y-8 mt-12 bg-white dark:bg-slate-950 transition-colors">
-        <div className="font-black text-2xl uppercase tracking-tighter text-[#002B99] dark:text-white italic">
-          MULHERES <span className="text-orange-500">QUE CODAM</span>
-        </div>
-        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.5em]">
-          {" "}
-          Decodificando o sistema • Construindo o futuro{" "}
-        </p>
-        <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest opacity-30">
-          Desenvolvido por Amanda Folly
-        </p>
-      </footer>
     </div>
   );
 }
