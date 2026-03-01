@@ -21,7 +21,6 @@ export default function Projetos() {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-800 dark:text-slate-200 transition-colors duration-200">
-      
       {/* CABEÇALHO ANTIGO REMOVIDO - AGORA USA A NAVBAR GLOBAL DO LAYOUT */}
 
       <header className="relative bg-[#002B99] overflow-hidden">
@@ -30,25 +29,32 @@ export default function Projetos() {
         <div className="relative max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between">
           <div className="sm:max-w-xl mb-8 sm:mb-0">
             <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tighter mb-4 leading-none uppercase">
-              Decodificando o sistema,<br />
+              Decodificando o sistema,
+              <br />
               <span className="text-yellow-400">construindo o futuro.</span>
             </h1>
             <p className="text-lg text-blue-100 mb-8 max-w-2xl font-medium opacity-90 uppercase tracking-widest leading-relaxed">
-              Apoie projetos que empoderam mulheres de comunidades periféricas através da educação tecnológica.
+              Apoie projetos que empoderam mulheres de comunidades periféricas
+              através da educação tecnológica.
             </p>
           </div>
 
-          <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-2xl transform rotate-3 border-l-8 border-orange-500 max-w-xs w-full">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Total Arrecadado</h3>
-              <span className="material-icons text-orange-500">savings</span>
+          <div className="relative group w-full max-w-sm md:max-w-md">
+            <div className="relative bg-transparent rounded-[3rem] shadow-2xl transform rotate-3 border-l-[12px] border-[#FF6600] w-full overflow-hidden h-[350px] md:h-[450px] transition-all hover:rotate-0 hover:scale-[1.02] duration-500">
+              <Image
+                src="/images/projetos/mqc-ideathon.jpeg"
+                alt="Mulheres que Codam Ideathon"
+                fill
+                className="object-cover" // Removi o rounded interno para não haver conflito com o arredondamento do pai
+                priority
+              />
+              {/* Overlay de legenda interna */}
+              <div className="absolute bottom-8 left-8 right-8 z-10">
+                <span className="bg-[#FF6600] text-white text-[11px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.2em] shadow-xl">
+                  MQC Ideathon
+                </span>
+              </div>
             </div>
-            <p className="text-4xl font-black text-[#002B99] dark:text-blue-400 tracking-tighter mb-1">
-              2.222.222 XLM
-            </p>
-            <p className="text-sm text-emerald-600 font-bold uppercase tracking-widest">
-              ~ R$ 1.200.000
-            </p>
           </div>
         </div>
       </header>
@@ -71,6 +77,15 @@ export default function Projetos() {
               Todos
             </button>
             <button className="px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-black uppercase tracking-widest hover:bg-slate-200 transition-all">
+              Segurança
+            </button>
+            <button className="px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-black uppercase tracking-widest hover:bg-slate-200 transition-all">
+              Social
+            </button>
+            <button className="px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-black uppercase tracking-widest hover:bg-slate-200 transition-all">
+              Financeiro
+            </button>
+            <button className="px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-black uppercase tracking-widest hover:bg-slate-200 transition-all">
               Educação
             </button>
             <button className="px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-black uppercase tracking-widest hover:bg-slate-200 transition-all">
@@ -87,14 +102,13 @@ export default function Projetos() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          
           {/* PROJETO 1 */}
           <div className="group bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col h-full relative">
             <div className="h-56 bg-slate-200 relative overflow-hidden">
               <img
-                alt="Mulheres em workshop de tecnologia"
+                alt="MQC 2 edição"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80"
+                src="images/projetos/projeto-destaque/mqc-banner.jpeg"
               />
               <div className="absolute top-6 left-6">
                 <span className="bg-orange-500 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em] shadow-lg">
@@ -105,25 +119,36 @@ export default function Projetos() {
             <div className="p-8 flex-1 flex flex-col">
               <div className="flex gap-2 mb-4">
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-lg">
-                  Lei Rouanet
+                  EDUCAÇÃO
                 </span>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase italic">
-                Bootcamp Fullstack Periferia
+              <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase">
+                MQC - 2ª EDIÇÃO!
               </h3>
               <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 font-medium leading-relaxed flex-1">
-                Formação intensiva para 50 mulheres da Zona Norte do Rio. Inclui notebook e auxílio internet.
+                A iniciativa capacita mulheres de periferias do Rio para o
+                mercado de tecnologia e WEB3, oferecendo formação em programação
+                com suporte integral e humanizado.
               </p>
               <div className="mb-6 space-y-3">
                 <div className="flex justify-between items-end">
                   <div className="flex flex-col">
-                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Arrecadado</span>
-                     <span className="font-black text-slate-900 dark:text-white">83.333 XLM</span>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                      Arrecadado
+                    </span>
+                    <span className="font-black text-slate-900 dark:text-white">
+                      83.333 XLM
+                    </span>
                   </div>
-                  <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">75% da Meta</span>
+                  <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">
+                    75% da Meta
+                  </span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
-                  <div className="bg-[#002B99] h-full rounded-full transition-all duration-1000" style={{ width: "75%" }}></div>
+                  <div
+                    className="bg-[#002B99] h-full rounded-full transition-all duration-1000"
+                    style={{ width: "75%" }}
+                  ></div>
                 </div>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-slate-800 mt-auto">
@@ -149,25 +174,38 @@ export default function Projetos() {
             <div className="p-8 flex-1 flex flex-col">
               <div className="flex gap-2 mb-4">
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-lg">
-                  Liderança
+                  SEGURANÇA
                 </span>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase italic">
-                Tech Leaders for Tomorrow
+              <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase">
+                ELO.ME
               </h3>
               <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 font-medium leading-relaxed flex-1">
-                Programa de liderança técnica para mulheres. Workshops de soft skills e gestão ágil.
+                Elo.me é uma infraestrutura digital para a saúde privada que
+                unifica dados clínicos fragmentados. Permite registros seguros,
+                imutáveis e com validade jurídica para clínicas, garantindo
+                interoperabilidade, baixo custo e controle dos dados pelo
+                paciente.
               </p>
               <div className="mb-6 space-y-3">
                 <div className="flex justify-between items-end">
                   <div className="flex flex-col">
-                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Arrecadado</span>
-                     <span className="font-black text-slate-900 dark:text-white">12.500 XLM</span>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                      Arrecadado
+                    </span>
+                    <span className="font-black text-slate-900 dark:text-white">
+                      12.500 XLM
+                    </span>
                   </div>
-                  <span className="text-[10px] font-black text-orange-500 uppercase tracking-widest">50% da Meta</span>
+                  <span className="text-[10px] font-black text-orange-500 uppercase tracking-widest">
+                    50% da Meta
+                  </span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
-                  <div className="bg-orange-500 h-full rounded-full transition-all duration-1000" style={{ width: "50%" }}></div>
+                  <div
+                    className="bg-orange-500 h-full rounded-full transition-all duration-1000"
+                    style={{ width: "50%" }}
+                  ></div>
                 </div>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-slate-800 mt-auto">
@@ -193,25 +231,35 @@ export default function Projetos() {
             <div className="p-8 flex-1 flex flex-col">
               <div className="flex gap-2 mb-4">
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-lg">
-                  Evento
+                  EDUCAÇÃO
                 </span>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase italic">
-                Hackathon Mulheres Negras Tech
+              <h3 className="text-2xl font-display font-display font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase">
+                STELLARBRIDGE
               </h3>
               <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 font-medium leading-relaxed flex-1">
-                Maratona de programação de 48h focada em desafios sociais locais com premiação em bolsas.
+                Inclusão , capacitação e inserção de mulheres trans no mercado
+                de trabalho.
               </p>
               <div className="mb-6 space-y-3">
                 <div className="flex justify-between items-end">
                   <div className="flex flex-col">
-                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Arrecadado</span>
-                     <span className="font-black text-slate-900 dark:text-white">33.333 XLM</span>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                      Arrecadado
+                    </span>
+                    <span className="font-black text-slate-900 dark:text-white">
+                      33.333 XLM
+                    </span>
                   </div>
-                  <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">90% da Meta</span>
+                  <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">
+                    90% da Meta
+                  </span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
-                  <div className="bg-[#002B99] h-full rounded-full transition-all duration-1000" style={{ width: "90%" }}></div>
+                  <div
+                    className="bg-[#002B99] h-full rounded-full transition-all duration-1000"
+                    style={{ width: "90%" }}
+                  ></div>
                 </div>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-slate-800 mt-auto">
@@ -237,25 +285,34 @@ export default function Projetos() {
             <div className="p-8 flex-1 flex flex-col">
               <div className="flex gap-2 mb-4">
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-lg">
-                  Backend
+                  SOCIAL
                 </span>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase italic">
-                Node.js Girls Rio
+              <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase">
+                KARN
               </h3>
               <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 font-medium leading-relaxed flex-1">
-                Workshop de desenvolvimento backend exclusivo para mulheres residentes no Rio de Janeiro.
+                Primeira implementação da Valocracia na Stellar.
               </p>
               <div className="mb-6 space-y-3">
                 <div className="flex justify-between items-end">
                   <div className="flex flex-col">
-                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Arrecadado</span>
-                     <span className="font-black text-slate-900 dark:text-white">1.111 XLM</span>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                      Arrecadado
+                    </span>
+                    <span className="font-black text-slate-900 dark:text-white">
+                      1.111 XLM
+                    </span>
                   </div>
-                  <span className="text-[10px] font-black text-orange-500 uppercase tracking-widest">10% da Meta</span>
+                  <span className="text-[10px] font-black text-orange-500 uppercase tracking-widest">
+                    10% da Meta
+                  </span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
-                  <div className="bg-orange-500 h-full rounded-full transition-all duration-1000" style={{ width: "10%" }}></div>
+                  <div
+                    className="bg-orange-500 h-full rounded-full transition-all duration-1000"
+                    style={{ width: "10%" }}
+                  ></div>
                 </div>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-slate-800 mt-auto">
@@ -275,31 +332,43 @@ export default function Projetos() {
               <img
                 alt="CyberSegurança"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80"
+                src="/images/projetos/projeto-5/vizinhanca-cuidadora-banner.png"
               />
             </div>
             <div className="p-8 flex-1 flex flex-col">
               <div className="flex gap-2 mb-4">
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-lg">
-                  Segurança
+                  SOCIAL
                 </span>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase italic">
-                CyberSegurança na Favela
+              <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase">
+                VIZINHANÇA CUIDADORA
               </h3>
               <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 font-medium leading-relaxed flex-1">
-                Capacitação em segurança da informação para jovens de comunidades periféricas.
+                Uma plataforma comunitária que conecta profissionais de saúde e
+                apoio a moradores locais, utilizando a Blockchain Stellar para
+                garantir pagamentos transparentes e a sustentabilidade de um
+                fundo social comunitário.
               </p>
               <div className="mb-6 space-y-3">
                 <div className="flex justify-between items-end">
                   <div className="flex flex-col">
-                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Arrecadado</span>
-                     <span className="font-black text-slate-900 dark:text-white">66.666 XLM</span>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                      Arrecadado
+                    </span>
+                    <span className="font-black text-slate-900 dark:text-white">
+                      66.666 XLM
+                    </span>
                   </div>
-                  <span className="text-[10px] font-black text-[#002B99] uppercase tracking-widest">45% da Meta</span>
+                  <span className="text-[10px] font-black text-[#002B99] uppercase tracking-widest">
+                    45% da Meta
+                  </span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
-                  <div className="bg-[#002B99] h-full rounded-full transition-all duration-1000" style={{ width: "45%" }}></div>
+                  <div
+                    className="bg-[#002B99] h-full rounded-full transition-all duration-1000"
+                    style={{ width: "45%" }}
+                  ></div>
                 </div>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-slate-800 mt-auto">
@@ -317,6 +386,61 @@ export default function Projetos() {
           <div className="group bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col h-full relative">
             <div className="h-56 bg-slate-200 relative overflow-hidden">
               <img
+                alt="Projeto VoidCast"
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80"
+              />
+              <div className="absolute top-6 left-6"></div>
+            </div>
+            <div className="p-8 flex-1 flex flex-col">
+              <div className="flex gap-2 mb-4">
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-lg">
+                  EDUCAÇÃO
+                </span>
+              </div>
+              <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase">
+                VOID CAST
+              </h3>
+              <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 font-medium leading-relaxed flex-1">
+                Engine de Compilação multichain projetada para resolver a lacuna
+                de performance no desenvolvimento de contratos inteligentes.
+              </p>
+              <div className="mb-6 space-y-3">
+                <div className="flex justify-between items-end">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                      Arrecadado
+                    </span>
+                    <span className="font-black text-slate-900 dark:text-white">
+                      83.333 XLM
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">
+                    75% da Meta
+                  </span>
+                </div>
+                <div className="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
+                  <div
+                    className="bg-[#002B99] h-full rounded-full transition-all duration-1000"
+                    style={{ width: "75%" }}
+                  ></div>
+                </div>
+              </div>
+              <div className="pt-6 border-t border-slate-50 dark:border-slate-800 mt-auto">
+                <Link
+                  href="/contribuir?projeto=1&nome=Bootcamp%20Fullstack%20Periferia"
+                  className="bg-[#002B99] hover:bg-blue-800 text-white font-black py-4 px-6 rounded-2xl transition-all w-full text-center block text-[10px] uppercase tracking-[0.2em] shadow-lg active:scale-95"
+                >
+                  Apoiar Projeto
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* PROJETO 7 */}
+          <div className="group bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col h-full relative">
+            <div className="h-56 bg-slate-200 relative overflow-hidden">
+              <img
                 alt="Web3"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80"
@@ -330,25 +454,34 @@ export default function Projetos() {
             <div className="p-8 flex-1 flex flex-col opacity-60">
               <div className="flex gap-2 mb-4">
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-lg">
-                  Web3
+                  FINANCEIRO
                 </span>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase italic">
-                Web3 para Lideranças
+              <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-3 tracking-tight leading-none uppercase">
+                STELLACOFRE
               </h3>
               <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 font-medium leading-relaxed flex-1">
-                Introdução à blockchain e governança descentralizada para mulheres líderes.
+                Autonomia financeira para mulheres através da tecnologia
               </p>
               <div className="mb-6 space-y-3">
                 <div className="flex justify-between items-end">
                   <div className="flex flex-col">
-                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Arrecadado</span>
-                     <span className="font-black text-emerald-600">100.000 XLM</span>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                      Arrecadado
+                    </span>
+                    <span className="font-black text-emerald-600">
+                      100.000 XLM
+                    </span>
                   </div>
-                  <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">100% da Meta</span>
+                  <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">
+                    100% da Meta
+                  </span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
-                  <div className="bg-emerald-500 h-full rounded-full transition-all duration-1000" style={{ width: "100%" }}></div>
+                  <div
+                    className="bg-emerald-500 h-full rounded-full transition-all duration-1000"
+                    style={{ width: "100%" }}
+                  ></div>
                 </div>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-slate-800 mt-auto">
@@ -361,16 +494,20 @@ export default function Projetos() {
               </div>
             </div>
           </div>
-
         </div>
       </main>
 
       <footer className="py-20 border-t border-slate-100 dark:border-slate-800 text-center space-y-8 mt-12 bg-white dark:bg-slate-950 transition-colors">
         <div className="font-black text-2xl uppercase tracking-tighter text-[#002B99] dark:text-white italic">
-           MULHERES <span className="text-orange-500">QUE CODAM</span>
+          MULHERES <span className="text-orange-500">QUE CODAM</span>
         </div>
-        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.5em]"> Decodificando o sistema • Construindo o futuro </p>
-        <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest opacity-30">Desenvolvido por Amanda Folly</p>
+        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.5em]">
+          {" "}
+          Decodificando o sistema • Construindo o futuro{" "}
+        </p>
+        <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest opacity-30">
+          Desenvolvido por Amanda Folly
+        </p>
       </footer>
     </div>
   );
