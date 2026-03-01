@@ -66,7 +66,7 @@ export default function Home() {
                       w-full sm:w-auto
                     "
                   >
-                    <span aria-hidden>🤝</span>
+                    <span aria-hidden></span>
                     Doar via plataforma
                   </Link>
 

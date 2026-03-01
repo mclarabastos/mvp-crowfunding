@@ -14,12 +14,13 @@ export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // ROTAS CORRIGIDAS AQUI
   const navItems: NavItem[] = useMemo(
     () => [
-      { label: "Sobre nós", href: "/dashboard" },
+      { label: "Sobre nós", href: "/sobre" },
       { label: "Projetos", href: "/projetos" },
-      { label: "Parceiros", href: "/transparencia" },
-      { label: "Contato", href: "/carteira" },
+      { label: "Parceiros", href: "/parceiros" },
+      { label: "Contato", href: "/contato" },
     ],
     []
   );
@@ -38,7 +39,6 @@ export default function Navbar() {
     document.documentElement.classList.toggle("dark", shouldBeDark);
   }, []);
 
-  // Fecha menu mobile ao navegar
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
@@ -53,19 +53,15 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur dark:bg-slate-950/55">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-1 sm:px-6 lg:px-8">
-        {/* Logo */}
         <Link
           href="/"
           className="group inline-flex items-center gap-3"
           aria-label="Voltar para a Home"
         >
           <div className="flex flex-col leading-none">
-            {/* Linha 1 */}
             <span className="font-display font-black uppercase tracking-tight text-primary dark:text-white text-lg leading-none">
               Mulheres
             </span>
-
-            {/* Linha 2: QUE + CODAM juntos */}
             <span className="-mt-1 font-display font-black uppercase tracking-tight text-primary dark:text-white text-sm sm:text-base leading-none">
               <span className="inline-flex items-baseline gap-1 sm:gap-1.5">
                 <span>Que</span>
@@ -75,7 +71,6 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Links desktop */}
         <div className="hidden lg:flex items-center gap-10">
           {navItems.map((item) => {
             const active = isPageActive(item.href);
@@ -105,9 +100,7 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Ações (toggle + CTA + hamburger) */}
         <div className="flex items-center gap-3">
-          {/* CTA Faça parte */}
           <Link
             href="/login"
             className="
@@ -123,7 +116,6 @@ export default function Navbar() {
             Faça parte
           </Link>
 
-          {/* Toggle tema */}
           <button
             type="button"
             onClick={toggleTheme}
@@ -144,7 +136,6 @@ export default function Navbar() {
             </span>
           </button>
 
-          {/* Hamburger (mobile) */}
           <button
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
@@ -168,7 +159,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menu mobile dropdown */}
       <div
         className={[
           "lg:hidden overflow-hidden border-t border-slate-200/70 dark:border-slate-800/70",
@@ -177,9 +167,8 @@ export default function Navbar() {
         ].join(" ")}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-3 flex flex-col gap-2">
-          {/* CTA no mobile */}
           <Link
-            href="/dashboard"
+            href="/login"
             className="
               inline-flex items-center justify-center
               rounded-xl px-4 py-3
